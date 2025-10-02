@@ -1,7 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory, redirect, url_for
 import joblib
 import numpy as np
 from flask_cors import CORS
+import os
+
 # Load model and scaler
 model = joblib.load('gaussian_nb_model.pkl')
 scaler = joblib.load('minmax_scaler.pkl')
@@ -18,8 +20,16 @@ crop_dict = {
 # Reverse the dictionary to map number → crop name
 label_to_crop = {v: k for k, v in crop_dict.items()}
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
+@app.route('/')
+def index():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('.', filename)
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
