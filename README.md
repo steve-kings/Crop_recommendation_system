@@ -2,9 +2,7 @@
 
 An AI-powered web application that helps farmers make informed crop planting decisions based on soil and environmental conditions.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Flask](https://img.shields.io/badge/Flask-3.0+-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 
 ## 🌟 Features
 
@@ -18,15 +16,8 @@ An AI-powered web application that helps farmers make informed crop planting dec
 
 ## 🚀 Live Demo
 
-**Deployed on Render:** [Your Render URL here]
+**Deployed on Render:** https://panda-smart-crop.onrender.com/
 
-## 📸 Screenshots
-
-### Main Page
-![Main Page](assets/images/screenshot-main.png)
-
-### Crop Recommendation
-![Crop Page](assets/images/screenshot-crop.png)
 
 ## 🛠️ Technologies Used
 
@@ -81,26 +72,7 @@ python app.py
 
 Visit: http://127.0.0.1:5000
 
-## 🌐 Deployment to Render
-
-### Quick Deploy
-1. Fork this repository
-2. Sign up at https://render.com
-3. Create new Web Service
-4. Connect your GitHub repo
-5. Add environment variable: `OPENWEATHER_API_KEY`
-6. Deploy!
-
 **Detailed guide:** See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
-
-## 📖 Documentation
-
-- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Deploy to Render & GitHub
-- **[SETUP_INSTRUCTIONS.md](SETUP_INSTRUCTIONS.md)** - Local setup guide
-- **[TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md)** - Translation feature guide
-- **[QUICK_START.md](QUICK_START.md)** - Quick start guide
-- **[CHANGES_SUMMARY.md](CHANGES_SUMMARY.md)** - Recent changes
-
 ## 🎯 Usage
 
 ### Get Crop Recommendations
@@ -155,19 +127,11 @@ The system can recommend 22 different crops:
 | | | Pomegranate | |
 | | | Coconut | |
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+#reate your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Authors
 
@@ -195,16 +159,6 @@ If you find this project helpful, please give it a ⭐!
 
 ---
 
-**Made with ❤️ for farmers in Kenya and beyond**
-
-## 📈 Project Status
-
-- ✅ Core functionality complete
-- ✅ Translation feature implemented
-- ✅ Security improvements done
-- ✅ Ready for deployment
-- 🔄 Continuous improvements
-
 ## 🔮 Future Enhancements
 
 - [ ] Add more languages (French, Spanish)
@@ -214,7 +168,6 @@ If you find this project helpful, please give it a ⭐!
 - [ ] Mobile app version
 - [ ] Offline mode support
 - [ ] SMS notifications
-- [ ] Community forum
 
 ## 📊 API Usage Limits
 
@@ -226,6 +179,3 @@ If you find this project helpful, please give it a ⭐!
 - 10,000 words/day
 - No registration required
 
----
-
-**Last Updated:** November 2025
