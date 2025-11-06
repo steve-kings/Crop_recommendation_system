@@ -36,6 +36,19 @@ OPENWEATHER_API_KEY = os.getenv('OPENWEATHER_API_KEY')
 def index():
     return send_from_directory('.', 'index.html')
 
+@app.route('/health')
+def health():
+    """Health check endpoint"""
+    return jsonify({
+        'status': 'healthy',
+        'message': 'Panda Smart API is running',
+        'endpoints': {
+            'predict': '/predict',
+            'weather': '/api/weather/*',
+            'translate': '/api/translate'
+        }
+    })
+
 @app.route('/<path:filename>')
 def serve_static(filename):
     return send_from_directory('.', filename)
@@ -44,10 +57,16 @@ def serve_static(filename):
 def predict():
     try:
         data = request.get_json()
+        
+        # Log the received data for debugging
+        print(f"Received prediction request: {data}")
 
         expected_features = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
         if not all(feature in data for feature in expected_features):
-            return jsonify({'error': f'Missing one or more required fields: {expected_features}'}), 400
+            missing = [f for f in expected_features if f not in data]
+            error_msg = f'Missing required fields: {missing}'
+            print(f"Error: {error_msg}")
+            return jsonify({'error': error_msg}), 400
 
         input_features = np.array([[data[feature] for feature in expected_features]])
         input_scaled = scaler.transform(input_features)
@@ -56,11 +75,14 @@ def predict():
         # Convert to native Python int and map to crop name
         predicted_label = int(prediction[0])
         crop_name = label_to_crop.get(predicted_label, "Unknown")
-
+        
+        print(f"Prediction successful: {crop_name}")
         return jsonify({'predicted_crop': crop_name})
 
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        error_msg = str(e)
+        print(f"Prediction error: {error_msg}")
+        return jsonify({'error': error_msg}), 500
 
 @app.route('/api/weather/current', methods=['GET'])
 def get_weather_by_coords():
