@@ -1,35 +1,231 @@
-Panda Smart Crop Recommendation System is an AI-powered web application designed to help farmers and agricultural advisors make informed crop planting decisions based on environmental and soil conditions. By analyzing key factors such as temperature, humidity, rainfall, and soil nutrients (N, P, K), the system recommends the most suitable crops for a specific region or field.
+# 🌾 Panda Smart - Crop Recommendation System
 
-🌾 Key Features
-🌡️ Analyzes environmental factors (temperature, rainfall, humidity)
+An AI-powered web application that helps farmers make informed crop planting decisions based on soil and environmental conditions.
 
-🧪 Evaluates soil nutrients: Nitrogen (N), Phosphorus (P), Potassium (K)
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-3.0+-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-🤖 Utilizes machine learning (Naive Bayes) for accurate crop prediction
+## 🌟 Features
 
-📊 Simple and intuitive web interface for input and results
+- 🤖 **Machine Learning Predictions** - Uses Gaussian Naive Bayes algorithm
+- 🌍 **Real-time Weather Integration** - Fetches current weather data
+- 🌐 **Free Translation** - Dynamic English ↔ Swahili translation
+- 📊 **Soil Analysis** - Analyzes N, P, K nutrients
+- 🎯 **22 Crop Types** - Recommends from rice, maize, wheat, and more
+- 🔒 **Secure API** - Backend proxy for all API calls
+- 📱 **Responsive Design** - Works on all devices
 
-🌍 Helps increase crop yield and optimize land use
+## 🚀 Live Demo
 
-🛠️ Technologies Used
-Python (Machine Learning with Naive Bayes)
+**Deployed on Render:** [Your Render URL here]
 
-Flask for web integration.
+## 📸 Screenshots
 
-HTML, CSS, Bootstrap (Frontend UI)
+### Main Page
+![Main Page](assets/images/screenshot-main.png)
 
-Git & GitHub for version control
+### Crop Recommendation
+![Crop Page](assets/images/screenshot-crop.png)
 
-🚀 How It Works
-Users input soil and climate data into the web form.
+## 🛠️ Technologies Used
 
-The system processes the data through a trained machine learning model.
+### Backend
+- **Flask** - Python web framework
+- **scikit-learn** - Machine learning library
+- **pandas & numpy** - Data processing
+- **python-dotenv** - Environment variables
+- **gunicorn** - Production server
 
-A list of optimal crops is recommended based on the analysis.
+### Frontend
+- **HTML5 & CSS3** - Structure and styling
+- **Bootstrap 5** - Responsive design
+- **JavaScript** - Dynamic functionality
+- **AOS** - Scroll animations
 
-📌 Project Goals
-Support sustainable farming with data-driven insights
+### APIs
+- **OpenWeather API** - Weather data
+- **MyMemory Translation API** - Free translation (10,000 words/day)
 
-Reduce trial-and-error in crop selection
+## 📋 Prerequisites
 
-Empower farmers through accessible AI tools
+- Python 3.8 or higher
+- pip (Python package manager)
+- OpenWeather API key (free tier)
+
+## 🔧 Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/steve-kings/Crop_recommendation_system.git
+cd Crop_recommendation_system
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configure Environment Variables
+Create a `.env` file in the root directory:
+```env
+OPENWEATHER_API_KEY=your_api_key_here
+```
+
+Get your free API key from: https://openweathermap.org/api
+
+### 4. Run the Application
+```bash
+python app.py
+```
+
+Visit: http://127.0.0.1:5000
+
+## 🌐 Deployment to Render
+
+### Quick Deploy
+1. Fork this repository
+2. Sign up at https://render.com
+3. Create new Web Service
+4. Connect your GitHub repo
+5. Add environment variable: `OPENWEATHER_API_KEY`
+6. Deploy!
+
+**Detailed guide:** See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+
+## 📖 Documentation
+
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Deploy to Render & GitHub
+- **[SETUP_INSTRUCTIONS.md](SETUP_INSTRUCTIONS.md)** - Local setup guide
+- **[TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md)** - Translation feature guide
+- **[QUICK_START.md](QUICK_START.md)** - Quick start guide
+- **[CHANGES_SUMMARY.md](CHANGES_SUMMARY.md)** - Recent changes
+
+## 🎯 Usage
+
+### Get Crop Recommendations
+
+1. **Enter Soil Data:**
+   - Nitrogen (N)
+   - Phosphorus (P)
+   - Potassium (K)
+   - pH value
+
+2. **Enter Environmental Data:**
+   - Temperature (°C)
+   - Humidity (%)
+   - Rainfall (mm)
+
+3. **Or Use Weather Data:**
+   - Click "Use weather data" button
+   - Auto-fills temperature, humidity, and rainfall
+
+4. **Get Recommendation:**
+   - Click "Get Recommendation"
+   - View suggested crop
+
+### Translate to Swahili
+
+1. Click the **"🌍 Swahili"** button
+2. Entire page translates to Swahili
+3. Click **"🌍 English"** to switch back
+
+## 🔐 Security Features
+
+- ✅ API keys stored in environment variables
+- ✅ Backend proxy for external APIs
+- ✅ No secrets exposed in frontend
+- ✅ .env file in .gitignore
+- ✅ CORS properly configured
+
+## 📊 Supported Crops
+
+The system can recommend 22 different crops:
+
+| Cereals | Pulses | Fruits | Cash Crops |
+|---------|--------|--------|------------|
+| Rice | Chickpea | Banana | Cotton |
+| Maize | Kidney Beans | Mango | Jute |
+| | Pigeon Peas | Grapes | Coffee |
+| | Moth Beans | Watermelon | |
+| | Mung Bean | Muskmelon | |
+| | Black Gram | Apple | |
+| | Lentil | Orange | |
+| | | Papaya | |
+| | | Pomegranate | |
+| | | Coconut | |
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **Stephen Kingori** - Developer
+- **Rotich Kibet** - Developer
+- **Agnes Mwikali** - Developer
+
+## 🙏 Acknowledgments
+
+- Karatina University - Department of Computer Science
+- Dr. Zablon Okari - Project Supervisor
+- OpenWeather API - Weather data
+- MyMemory Translation API - Free translation service
+- Bootstrap Team - UI framework
+
+## 📞 Contact
+
+For questions or support:
+- **GitHub:** [@steve-kings](https://github.com/steve-kings)
+- **Repository:** [Crop_recommendation_system](https://github.com/steve-kings/Crop_recommendation_system)
+
+## 🌟 Star This Repository
+
+If you find this project helpful, please give it a ⭐!
+
+---
+
+**Made with ❤️ for farmers in Kenya and beyond**
+
+## 📈 Project Status
+
+- ✅ Core functionality complete
+- ✅ Translation feature implemented
+- ✅ Security improvements done
+- ✅ Ready for deployment
+- 🔄 Continuous improvements
+
+## 🔮 Future Enhancements
+
+- [ ] Add more languages (French, Spanish)
+- [ ] Implement user accounts
+- [ ] Save recommendation history
+- [ ] Add crop care tips
+- [ ] Mobile app version
+- [ ] Offline mode support
+- [ ] SMS notifications
+- [ ] Community forum
+
+## 📊 API Usage Limits
+
+### OpenWeather API (Free Tier)
+- 60 calls/minute
+- 1,000,000 calls/month
+
+### MyMemory Translation (Free)
+- 10,000 words/day
+- No registration required
+
+---
+
+**Last Updated:** November 2025

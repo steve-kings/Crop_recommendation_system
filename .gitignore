@@ -1,0 +1,49 @@
+# Environment variables
+.env
+
+# Setup and instruction files (keep local only)
+SETUP_INSTRUCTIONS.md
+TRANSLATION_GUIDE.md
+CHANGES_SUMMARY.md
+QUICK_START.md
+DEPLOYMENT_GUIDE.md
+DEPLOY_COMMANDS.txt
+SIMPLE_DEPLOY_STEPS.md
+START_HERE.md
+WHAT_GETS_PUSHED.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

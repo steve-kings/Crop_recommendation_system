@@ -36,14 +36,8 @@
         resultSection.style.display = 'none';
         
         // Store the weather data globally so we can access it from different functions
-        // Tried using localStorage but it was acting wonky
         let weatherInfo = null;
         let rainfallInfo = null;
-        
-        // My OpenWeather API key - this is my api key, please don't use it for anything else
-        // If you do, I will be sad and you will be sad when it stops working since i can revoke it
-        // You can get your own key at https://home.openweathermap.org/users/sign_up
-        const apiKey = 'c8ddf129b478b5f509e6e7466117dab4';
         
         // Start by getting the user's weather - this auto-runs when the page loads
         getWeatherData();
@@ -342,9 +336,9 @@
         // Function to fetch weather for a city name
         async function fetchWeatherByCity(city) {
             try {
-                // First get the current weather
+                // First get the current weather via backend proxy
                 const weatherResponse = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`
+                    `/api/weather/city?city=${encodeURIComponent(city)}`
                 );
                 
                 if (!weatherResponse.ok) {
@@ -358,9 +352,9 @@
                 const weatherData = await weatherResponse.json();
                 weatherInfo = weatherData; // Save this globally
                 
-                // Now get the forecast for rainfall data
+                // Now get the forecast for rainfall data via backend proxy
                 const forecastResponse = await fetch(
-                    `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`
+                    `/api/weather/forecast?city=${encodeURIComponent(city)}`
                 );
                 
                 if (!forecastResponse.ok) {
@@ -390,9 +384,9 @@
         // Function to fetch weather for coordinates
         async function fetchWeatherByCoords(lat, lon) {
             try {
-                // Get current weather conditions
+                // Get current weather conditions via backend proxy
                 const weatherResponse = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+                    `/api/weather/current?lat=${lat}&lon=${lon}`
                 );
                 
                 if (!weatherResponse.ok) {
@@ -402,9 +396,9 @@
                 const weatherData = await weatherResponse.json();
                 weatherInfo = weatherData; // Save globally
                 
-                // Get forecast for rainfall
+                // Get forecast for rainfall via backend proxy
                 const forecastResponse = await fetch(
-                    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+                    `/api/weather/forecast?lat=${lat}&lon=${lon}`
                 );
                 
                 if (!forecastResponse.ok) {
